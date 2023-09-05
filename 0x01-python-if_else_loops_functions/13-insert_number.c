@@ -21,7 +21,7 @@ listint_t *insert_node(listint_t **head, int number)
 	 * searcing for the node that is just before
 	 * the node that is grater than number
 	 */
-	while (current && curent->next && number > curent->next->n)
+	while (current && current->next && number > current->next->n)
 		current = current->next;
 	if (current == NULL)
 	{
