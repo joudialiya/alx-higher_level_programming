@@ -5,4 +5,4 @@ def print_last_digit(number):
         return (number % 10)
     else:
         print("{:d}".format((number % -10) * -1), end="")
-        return ((number % -10)* -1)
+        return ((number % -10) * -1)
