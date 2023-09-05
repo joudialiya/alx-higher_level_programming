@@ -6,6 +6,6 @@ def uppercase(str):
         else:
             out = str[i]
         if (i == len(str) - 1):
-            print("%c" % out)
+            print("{:c}".format(out))
         else:
-            print("%c" % out, end="")
+            print("{:c}".format(out), end="")
