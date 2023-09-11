@@ -8,13 +8,14 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *current = NULL;
-	listint_t *list[1024];
+	listint_t **list = NULL;
 	int size = 0;
 	int index = 0;
 
 	current = *head;
 	while (!current)
 	{
+		list = realloc(list, sizeof(listint_t *) * (size + 1))
 		list[size] = current;
 		++size;
 		current = current->next;
