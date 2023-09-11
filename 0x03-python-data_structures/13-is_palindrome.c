@@ -8,23 +8,25 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *current = NULL;
-	listint_t *end = NULL;
+	listint_t *list[1024];
+	int size = 0;
+	int index = 0;
 
-	end = NULL;
 	current = *head;
-	while (current != end)
+	while (!current)
 	{
-		listint_t *mirrored = NULL;
-
-		mirrored = current;
-		while (mirrored->next != end)
-		{
-				mirrored = mirrored->next;
-		}
-		if (current->n != mirrored->n)
-				return (0);
-		end = mirrored;
+		list[size] = current;
+		++size;
 		current = current->next;
+	}
+	
+	while (index != size / 2)
+	{
+		int mirrored_index = size - 1 - index;
+
+		if (list[index]->n != list[mirrored_index]->n)
+				return (0);
+		++index;
 	}
 	return (1);
 }
