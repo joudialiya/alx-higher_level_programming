@@ -1,15 +1,4 @@
 #include "lists.h"
-/**
- * length_list - the lenght of a linked list
- * @head: head of the list
- * Return: the length
- */
-int length_list(listint_t *head)
-{
-	if (head == NULL)
-		return (0);
-	return (1 + length_list(head->next));
-}
 
 /**
  * is_palindrome - checks if a linked list is palindrom
@@ -18,26 +7,23 @@ int length_list(listint_t *head)
  */
 int is_palindrome(listint_t **head)
 {
-	int index = 0;
-	int length = 0;
 	listint_t *current = NULL;
+	listint_t *end = NULL;
 
-	length = length_list(*head);
+	end = NULL;
 	current = *head;
-	while (index < length / 2)
+	while (current != end)
 	{
-		listint_t *mirrored = current;
-		int mirrored_index = length - 1 - index;
-		int i = index;
+		listint_t *mirrored = NULL;
 
-		while (i < mirrored_index)
+		mirrored = current;
+		while (mirrored->next != end)
 		{
-			mirrored = mirrored->next;
-			++i;
+				mirrored = mirrored->next;
 		}
 		if (current->n != mirrored->n)
-			return (0);
-		++index;
+				return (0);
+		end = mirrored;
 		current = current->next;
 	}
 	return (1);
