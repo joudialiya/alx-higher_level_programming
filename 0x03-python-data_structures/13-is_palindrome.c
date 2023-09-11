@@ -13,7 +13,7 @@ int is_palindrome(listint_t **head)
 	int index = 0;
 
 	current = *head;
-	while (!current)
+	while (current)
 	{
 		list = realloc(list, sizeof(listint_t *) * (size + 1));
 		list[size] = current;
