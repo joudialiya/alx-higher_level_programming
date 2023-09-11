@@ -8,15 +8,14 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *current = NULL;
-	listint_t **list = NULL;
+	int list[1024];
 	int size = 0;
 	int index = 0;
 
 	current = *head;
 	while (current)
 	{
-		list = realloc(list, sizeof(listint_t *) * (size + 1));
-		list[size] = current;
+		list[size] = current->n;
 		++size;
 		current = current->next;
 	}
@@ -25,7 +24,7 @@ int is_palindrome(listint_t **head)
 	{
 		int mirrored_index = size - 1 - index;
 
-		if (list[index]->n != list[mirrored_index]->n)
+		if (list[index] != list[mirrored_index])
 				return (0);
 		++index;
 	}
