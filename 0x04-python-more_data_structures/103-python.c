@@ -19,8 +19,15 @@ void print_python_bytes(PyObject *p)
 		for (i = 0; i < size + 1 && i < 10; ++i)
 		{
 			printf("%02x", ob->ob_sval[i] & 0xff);
-			if (i < size || i < 9)
+			if (size + 1 < 10)
+			{
+					if (i < size)
+						printf(" ");
+			}
+			else
+				if (i < 9)
 					printf(" ");
+					
 		}
 		printf("\n");
 }
