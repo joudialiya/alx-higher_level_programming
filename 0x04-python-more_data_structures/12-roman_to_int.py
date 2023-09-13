@@ -12,6 +12,8 @@ def roman_to_int(string):
     ]
     i_string = 0
     i_symbol = 0
+    if not string:
+        return (0)
     while i_string < len(string):
         before_count = 0
         after_count = 0
