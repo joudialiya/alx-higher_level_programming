@@ -58,15 +58,14 @@ class Square:
         """
         Print the square to the screen
         """
-        for i in range(0, self.size + self.position[1]):
-            if i >= self.position[1]:
-                for j in range(0, self.size + self.position[0]):
-                    if j >= self.position[0]:
-                        print("#", end="")
-                    else:
-                        print(" ", end="")
-            print()
         if self.size == 0:
-            for j in range(0, self.position[0]):
-                print(" ", end="")
             print()
+        else:
+            for i in range(0, self.size + self.position[1]):
+                if i >= self.position[1]:
+                    for j in range(0, self.size + self.position[0]):
+                        if j >= self.position[0]:
+                            print("#", end="")
+                        else:
+                            print(" ", end="")
+                print()
