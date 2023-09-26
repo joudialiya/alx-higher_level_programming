@@ -21,4 +21,4 @@ class Square:
         """
         Calculate the area of the square based on size
         """
-        return (__size ** 2)
+        return (self.__size ** 2)
