@@ -1,0 +1,25 @@
+Import
+>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+Simple
+>>> say_my_name("a", "b")
+My name is a b
+
+Without lastname
+>>> say_my_name("a")
+My name is a 
+
+Empty string as first name
+>>> say_my_name("")
+My name is  
+
+Exceptions:
+a:
+>>> say_my_name(1, "b")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+b:
+>>> say_my_name("a", 1)
+Traceback (most recent call last):
+TypeError: last_name must be a string
