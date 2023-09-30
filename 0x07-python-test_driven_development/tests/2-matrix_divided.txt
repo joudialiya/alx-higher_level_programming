@@ -1,0 +1,45 @@
+>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+Normal behavior mixed intt and float
+>>> matrix = [
+...     [1, 2, 3.5],
+...     [4.222, 5, 6]
+... ]
+
+>>> matrix_divided(matrix, 2) # doctest: +NORMALIZE_WHITESPACE +REPORT_NDIFF
+[[0.5, 1.0, 1.75],
+[2.11, 2.5, 3.0]]
+
+Div is not a number
+>>> matrix_divided(matrix, 'a') # doctest: +NORMALIZE_WHITESPACE +REPORT_NDIFF
+Traceback (most recent call last):
+TypeError: div must be a number
+
+Div is zero
+>>> matrix_divided(matrix, 0) # doctest: +NORMALIZE_WHITESPACE +REPORT_NDIFF
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+
+Vectors of the matrix are not te same size
+>>> matrix = [
+...     [1, 2],
+...     [4.222, 5, 6]
+... ]
+
+>>> matrix_divided(matrix, 1) # doctest: +NORMALIZE_WHITESPACE +REPORT_NDIFF
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+Element of the matrix not a number
+>>> matrix = [
+...     [1, 2, 'a'],
+...     [4.222, 5, 6]
+... ]
+
+>>> matrix_divided(matrix, 1) # doctest: +NORMALIZE_WHITESPACE +REPORT_NDIFF
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided('a', 1) # doctest: +NORMALIZE_WHITESPACE +REPORT_NDIFF
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats

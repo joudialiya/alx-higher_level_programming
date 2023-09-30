@@ -1,0 +1,38 @@
+Import module
+>>> text_indentation = __import__("5-text_indentation").text_indentation
+
+Simple text:
+>>> text_indentation("Hi")
+Hi
+
+Delims only:
+>>> text_indentation(".:?")
+.
+<BLANKLINE>
+:
+<BLANKLINE>
+?
+<BLANKLINE>
+
+Delim with spaces
+>>> text_indentation("  .  ")
+.
+<BLANKLINE>
+
+Simple text with delims
+>>> text_indentation(".Hi.")
+.
+<BLANKLINE>
+Hi.
+<BLANKLINE>
+
+Simple text with spaces:
+>>> text_indentation("   Hi   ")
+Hi
+
+Text with delims and spaces
+>>> text_indentation(" .  Hi  . ")
+.
+<BLANKLINE>
+Hi.
+<BLANKLINE>
