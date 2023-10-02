@@ -19,20 +19,20 @@ class Rectangle:
 
     width = property(get_width, set_width)
 
-    def get_heigth(self):
+    def get_height(self):
         """height getter"""
         return self.__heigth
 
-    def set_heigth(self, val):
-        """heigth setter"""
+    def set_height(self, val):
+        """height setter"""
         if not isinstance(val, int):
             raise TypeError("heigth must be an integer")
         if val < 0:
             raise ValueError("heigth must be >= 0")
-        self.__heigth = val
+        self.__height = val
 
-    heigth = property(get_heigth, set_heigth)
+    height = property(get_height, set_height)
 
-    def __init__(self, width=0, heigth=0):
-        self.set_heigth(heigth)
+    def __init__(self, width=0, height=0):
+        self.set_height(height)
         self.set_width(width)
