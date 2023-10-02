@@ -52,7 +52,7 @@ class Rectangle:
             return ("")
         for line in range(0, self.__height):
             for column in range(0, self.__width):
-                s += str(Rectangle.print_symbol)
+                s += str(self.print_symbol)
             s += "\n"
         s = s[:-1]
         return (s)
