@@ -80,7 +80,7 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         """Square constructor"""
-        return (Rectangle(size, size))
+        return (cls(size, size))
 
     def __init__(self, width=0, height=0):
         self.set_height(height)
