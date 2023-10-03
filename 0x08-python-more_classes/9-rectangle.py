@@ -75,7 +75,7 @@ class Rectangle:
     def __del__(self):
         """Destuctor"""
         print("Bye rectangle...")
-        Rectangle.number_of_instances -= 1
+        type(self).number_of_instances -= 1
 
     @classmethod
     def square(cls, size=0):
@@ -85,4 +85,4 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         self.set_height(height)
         self.set_width(width)
-        Rectangle.number_of_instances += 1
+        type(self).number_of_instances += 1
