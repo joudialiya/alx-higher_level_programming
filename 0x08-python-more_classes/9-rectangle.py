@@ -77,7 +77,7 @@ class Rectangle:
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
 
-    @classmwthod
+    @classmethod
     def square(cls, size=0):
         """Square constructor"""
         return (Rectangle(size, size))
