@@ -48,4 +48,4 @@ class Square(Rectangle):
 
     def __str__(self):
         """str repr"""
-        return ("[Square] {:d}/{:d}".format(self.__width, self.__height))
+        return ("[Square] {:d}/{:d}".format(self.__size, self.__size))
