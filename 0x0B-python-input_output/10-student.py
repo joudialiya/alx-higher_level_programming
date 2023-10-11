@@ -12,6 +12,9 @@ class Student:
 
     def to_json(self, attrs=None):
         """To string"""
-        if not attrs:
-            return self.__dict__
-        return dict(filter(lambda e: e[0] in attrs, self.__dict__.items()))
+        if type(attrs) is list:
+            for element in attrs:
+                if type(element) is not str:
+                    return self.__dict__
+            return dict(filter(lambda e: e[0] in attrs, self.__dict__.items()))
+        return self.__dict__
