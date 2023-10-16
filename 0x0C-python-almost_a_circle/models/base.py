@@ -37,7 +37,7 @@ class Base:
         """ save to a file """
         with open(cls.__name__ + ".json", 'w') as file:
             if list_objs is None:
-                d = None
+                d = []
             else:
                 d = list(map(lambda e: e.to_dictionary(), list_objs))
-                file.write(Base.to_json_string(d))
+            file.write(Base.to_json_string(d))
