@@ -45,6 +45,9 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """ Factory Constructor """
-        dummy = cls(1, 1)
+        if cls.__name__ is "Rectangle":
+            dummy = cls(1, 1)
+        else:
+            dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
