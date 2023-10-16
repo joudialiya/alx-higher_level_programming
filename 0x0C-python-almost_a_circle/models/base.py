@@ -36,7 +36,7 @@ class Base:
     def save_to_file(cls, list_objs):
         """ save to a file """
         with open(cls.__name__ + ".json", 'w') as file:
-            if list_object is None:
+            if list_objs is None:
                 d = None
             else:
                 d = list(map(lambda e: e.to_dictionary(), list_objs))
