@@ -41,3 +41,10 @@ class Base:
             else:
                 d = list(map(lambda e: e.to_dictionary(), list_objs))
             file.write(Base.to_json_string(d))
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ Factory Constructor """
+        dummy = cls(1, 1)
+        dummy.update(**dictionary)
+        return dummy
