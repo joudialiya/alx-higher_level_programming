@@ -39,3 +39,57 @@ class TestSquare(unittest.TestCase):
         b = Square(2, 2, 2)
         msg = "width must be > 0"
         self.assertRaisesRegex(ValueError, msg, setattr, b, "size", 0)
+
+    def test_update_1_arg(self):
+        """ test update with 1 arg """
+        b = Square(2, 2, 2)
+        b.update(12)
+        self.assertEqual(b.id, 12)
+
+    def test_update_2_arg(self):
+        """ test update with 2 arg """
+        b = Square(2, 2, 2)
+        b.update(12, 4)
+        self.assertEqual(b.id, 12)
+        self.assertEqual(b.size, 4)
+
+    def test_update_3_arg(self):
+        """ test update with 3 arg """
+        b = Square(2, 2, 2)
+        b.update(12, 4, 4)
+        self.assertEqual(b.id, 12)
+        self.assertEqual(b.size, 4)
+        self.assertEqual(b.x, 4)
+
+    def test_update_4_arg(self):
+        """ test update with 4 arg """
+        b = Square(2, 2, 2)
+        b.update(12, 4, 4, 4)
+        self.assertEqual(b.id, 12)
+        self.assertEqual(b.size, 4)
+        self.assertEqual(b.x, 4)
+        self.assertEqual(b.y, 4)
+
+    def test_update_args_kwargs_priority(self):
+        """ test priority """
+        b = Square(2, 2, 2)
+        b.update(12, size=4)
+        self.assertEqual(b.id, 12)
+        self.assertEqual(b.size, 2)
+
+    def test_update_kwargs(self):
+        """ test priority """
+        b = Square(2, 2, 2)
+        b.update(x=4, size=4, y=4)
+        self.assertEqual(b.x, 4)
+        self.assertEqual(b.size, 4)
+        self.assertEqual(b.y, 4)
+
+    def test_to_dictionary(self):
+        """ test the function() """
+        b = Square(1, 2, 3)
+        dictionary = b.to_dictionary()
+        self.assertIn("id", dictionary)
+        self.assertIn("size", dictionary)
+        self.assertIn("x", dictionary)
+        self.assertIn("y", dictionary)

@@ -127,3 +127,13 @@ class Test_rectangle(unittest.TestCase):
         self.assertEqual(b.x, 9)
         self.assertEqual(b.id, 9)
         self.assertEqual(b.width, 9)
+
+    def test_to_dictionary(self):
+        """ test the function() """
+        b = Rectangle(1, 2, 3, 4)
+        dictionary = b.to_dictionary()
+        self.assertIn("id", dictionary)
+        self.assertIn("width", dictionary)
+        self.assertIn("height", dictionary)
+        self.assertIn("x", dictionary)
+        self.assertIn("y", dictionary)
