@@ -79,13 +79,13 @@ class Rectangle(Base):
     def display(self):
         """ print the rectagle """
         for row in range(0, self.y + self.height):
-            if row > self.y:
+            if row >= self.y:
                 for column in range(0, self.x + self.width):
-                    if column >= self.x:
+                    if column < self.x:
                         print(" ", end="")
                     else:
                         print("#", end="")
-            print("\n")
+            print()
 
     def __str__(self):
         """String repr"""
