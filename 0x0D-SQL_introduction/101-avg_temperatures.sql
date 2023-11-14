@@ -1,5 +1,3 @@
 -- avrege by city order by temp
-SELECT city, AGV(value) as 'avg_tmp'
-FROM temperatures
-GROUP BY city
-ORDER BY avg_tmp DESC
+USE hbtn_0c_0
+SELECT city, AVG(value) AS avg_temp FROM temperatures GROUP BY city ORDER BY avg_temp DESC;
