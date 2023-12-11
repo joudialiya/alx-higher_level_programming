@@ -1,12 +1,13 @@
 #!/usr/bin/node
 
-const nums = [];
+let nums = [];
 
 for (let i = 2; i < process.argv.length; ++i) {
   nums.push(parseInt(process.argv[i]));
 }
+nums = nums.sort();
 if (nums.length < 2) {
   console.log('0');
 } else {
-  console.log(`${Math.max(...nums)}`);
+  console.log(`${nums[nums.length - 2]}`);
 }
