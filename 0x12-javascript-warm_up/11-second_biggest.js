@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-let nums = [];
+const nums = [];
 
 for (let i = 2; i < process.argv.length; ++i) {
   nums.push(parseInt(process.argv[i]));
