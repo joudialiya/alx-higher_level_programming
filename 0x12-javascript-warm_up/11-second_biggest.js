@@ -7,7 +7,6 @@ for (let i = 2; i < process.argv.length; ++i) {
 }
 nums.sort();
 nums = nums.filter(n => !isNaN(n));
-console.log(nums);
 if (nums.length < 2) {
   console.log('0');
 } else {
