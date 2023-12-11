@@ -1,8 +1,14 @@
 #!/usr/bin/node
 
-if (process.argv.length <= 3) {
-  console.log(0);
+let nums = [];
+
+for (let i = 2; i < process.argv.length; ++i) {
+  nums.push(parseInt(process.argv[i]));
+}
+nums.sort();
+
+if (nums.length < 2) {
+  console.log('0');
 } else {
-  const list = process.argv.sort();
-  console.log(list[list.length - 2]);
+  console.log(`${nums[nums.length - 2]}`);
 }
