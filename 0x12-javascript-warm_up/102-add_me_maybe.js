@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-exports.addMeMoby = function (n, callback) {
+exports.addMeMaybe = function (n, callback) {
   n += 1;
   callback(n);
 };
