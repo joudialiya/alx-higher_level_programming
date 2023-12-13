@@ -14,9 +14,9 @@ class Rectangle {
       for (let j = 0; j < this.width; ++j) {
         str += 'X';
       }
-      str = '\n';
+      str += '\n';
     }
-    console.out(str);
+    console.log(str.slice(0, str.length - 1));
   }
 }
 
