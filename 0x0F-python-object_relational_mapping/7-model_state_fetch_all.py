@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Select all ORM"""
 
 import sys
