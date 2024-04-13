@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
     for state in states:
         if state.name == sys.argv[4]:
-            print("{}: {}".format(state.id, state.name))
+            print("{}".format(state.id))
             found = True
             break
     if not found:
