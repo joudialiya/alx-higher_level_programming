@@ -18,11 +18,15 @@ if __name__ == "__main__":
 
     session = Session(engine)
     query = session.query(State)
-    query.where(State.name == sys.argv[4]).order_by(State.id)
-    state = query.first()
+    query.order_by(State.id)
+    states = query.all()
+    found = False
 
-    if state is not None:
-        print("{}: {}".format(state.id, state.name))
-    else:
+    for state in states:
+        if state is not None:
+            print("{}: {}".format(state.id, state.name))
+            found = True
+            break
+    if not found:
         print("Not found")
     session.close()
