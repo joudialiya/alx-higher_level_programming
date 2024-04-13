@@ -21,6 +21,6 @@ if __name__ == "__main__":
     state = State()
     state.name = "Louisiana"
     query = session.add(state)
-    session.flush()
+    session.commit()
     print(state.id)
     session.close()

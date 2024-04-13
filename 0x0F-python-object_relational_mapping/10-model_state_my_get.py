@@ -23,7 +23,7 @@ if __name__ == "__main__":
     found = False
 
     for state in states:
-        if state is not None:
+        if state.name == sys.argv[4]:
             print("{}: {}".format(state.id, state.name))
             found = True
             break

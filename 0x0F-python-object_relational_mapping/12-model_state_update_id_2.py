@@ -19,5 +19,5 @@ if __name__ == "__main__":
     state = session.select(State).where(State.id == 2).first()
     if state is not None:
         state.name = "New Mexico"
-        session.flush()
+        session.commit()
     session.close()

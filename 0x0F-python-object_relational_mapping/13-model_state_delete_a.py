@@ -21,5 +21,5 @@ if __name__ == "__main__":
     query.where(State.name.contains('a')).order_by(State.id)
     for state in query.all():
         session.delete(state)
-    session.flush()
+    session.commit()
     session.close()
