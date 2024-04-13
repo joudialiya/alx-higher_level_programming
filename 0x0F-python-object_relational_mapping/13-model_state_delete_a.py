@@ -18,8 +18,9 @@ if __name__ == "__main__":
 
     session = Session(engine)
     query = session.query(State)
-    query.where(State.name.contains('a')).order_by(State.id)
+    query.order_by(State.id)
     for state in query.all():
-        session.delete(state)
+        if ("a" in state.name):
+            session.delete(state)
     session.commit()
     session.close()
