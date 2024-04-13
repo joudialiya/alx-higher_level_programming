@@ -18,7 +18,8 @@ if __name__ == "__main__":
 
     session = Session(engine)
     query = session.query(State)
-    query.where('a' in State.name).order_by(State.id)
+    query.order_by(State.id)
     for state in query.all():
-        print("{}: {}".format(state.id, state.name))
+        if "a" in state.name:
+            print("{}: {}".format(state.id, state.name))
     session.close()
