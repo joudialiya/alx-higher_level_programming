@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     session = Session(engine)
     query = session.query(State)
-    query.where(State.name == sys.argv[4]).query.order_by(State.id)
+    query.where(State.name == sys.argv[4]).order_by(State.id)
     state = query.first()
 
     if state is not None:
